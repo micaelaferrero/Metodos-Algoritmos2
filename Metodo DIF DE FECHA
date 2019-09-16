@@ -1,0 +1,15 @@
+void diferencia(fecha f1, fecha f2)
+
+{int d1,m1,a1,d2,m2,a2,d3,m3,fecha1,fecha2,dif,d,m,a;
+	d1=f1.getDia();
+	d2=f2.getDia();
+	m1=f1.getMes();
+	m2=f2.getMes();
+	a1=f1.getAnio();
+	a2=f2.getAnio();
+	fecha1=d1+(m1*30)+(a1*365);
+	fecha2=d2+(m2*30)+(a2*365);
+	dif=fecha2-fecha1;
+	cout<<"La diferencia de FECHA ES:   "<<dif;
+}
+
