@@ -1,0 +1,57 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+
+bool primo(int n);
+
+void main()
+
+{int n;
+
+cout<<"ingrese el numero que quiere saber si es primo o no"<<endl;
+
+cin>>n;
+
+ primo(n);
+
+ if(primo(n)==true)
+ {
+	 cout<<"El numero es primo"<<endl;
+ }
+ else
+ {
+	 cout<<"El numero No es primo"<<endl;
+ }
+
+
+getch();
+
+}
+bool primo(int n)
+{int contador1,contador2;
+
+
+contador2=0;
+
+for(contador1=1;contador1<=n;contador1++)
+
+	if(n%contador1==0)
+
+	{contador2=contador2+1;
+
+	}
+
+if(contador2<=2) 
+{
+	return true;
+	
+}
+else
+{
+	return false;
+}
+}
