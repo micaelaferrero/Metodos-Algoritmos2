@@ -1,0 +1,88 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+
+class Numero
+{
+private:
+	int n;
+int sumarp(int n)
+{	if(n<10)
+	{
+		if(primo(n)==true)
+		{
+			return (n);
+		}
+		else 
+			return (0);
+	}
+
+	else
+	{
+		int s=sumarp(n/10);
+		if(primo(n%10)==true)
+		{
+			return (s+n%10);
+		}
+		else
+			return (s);
+	}
+
+}
+public:
+	Numero()
+	{
+		n=0;
+	}
+	void setn(int a)
+	{
+		n=a;
+	}
+	int getn()
+	{
+		return n;
+	}
+	void leer()
+	{
+		cout<<"Ingrese el numero a verificar";
+	    cin>>n;
+	}
+bool primo(int n)
+{int c2;
+  c2=0;
+  for(int c1=1;c1<=n;c1++)
+  {
+	  if(n%c1==0)
+	  {
+		  c2=c2+1;
+	  }
+	  if(c2<=2)
+	  {
+		  return true;
+	  }
+	  else
+		  return false;
+
+ }
+
+}
+	int sumap()
+	{
+		return sumarp(n);
+	}
+};
+
+void main()
+{int n;
+
+	Numero n1;
+	n1.leer();
+	int m=n1.sumap();
+	cout<<"La suma es : ";
+	cout<<m;
+	getch();
+	
+
+}
