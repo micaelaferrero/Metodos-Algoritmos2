@@ -1,0 +1,41 @@
+#include "stdafx.h"
+#include <iostream> 
+#include "conio.h"
+using namespace std;
+
+void sumat(int h,int m,int s,int x);
+
+void main()
+{ int suma,h,m,s,x;
+ do{
+    cout<<"Ingrese las horas";
+	cin>>h;
+ }while(h>60);
+  do{
+	cout<<"Ingrese los minutos";
+	cin>>m;
+  }while(m>60);
+  do{
+	cout<<"Ingrese los segundos";
+	cin>>s;
+	}while(s>60);
+	cout<<"Ingrese los segundos a sumar";
+	cin>>x;
+	sumat(h,m,s,x);
+}
+void sumat(int h,int m,int s, int x)
+{int suma,nh,nm,ns,rh,rn,rs;
+   suma=0;
+       nh=h*3600;
+	   nm=m*60;
+	   ns=s;
+	   suma=nh+nm+ns+x;
+	   rh=suma/3600;
+	   suma=suma%3600;
+	   rn=suma/60;
+	   rs=suma%60;
+	   cout<<"La nueva hora es: "<<rh<<endl;
+	   cout<<"Los nuevos minutos son: "<<rn<<endl;
+	   cout<<"Los nuevis segundos son: "<<rs<<endl;
+	   getch();
+}
