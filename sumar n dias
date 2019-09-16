@@ -4,19 +4,23 @@
 using namespace std;
 
 
+
 void fecha (int a, int b, int c, int n)
+
 {int dia_mes[13]={0,31,28,31,30,31,30,31,31,30,31,30,31};
-   
+
     a=n+a;
 
-	while (a>dia_mes[b]){
+	while (a>dia_mes[b])
+	{
 		a=a-dia_mes[b];
-		if (b+1>12){
+		if (b+1>12)
+		{
 			c++;
-			b=1;}
+			b=1;
+		}
 		else b++;
 	}
-
 	cout<<a<<" LA FECHA NUEVA ES: ";
 	cout<<a<<" / "<<b<<" / "<<c;
 }
@@ -24,15 +28,17 @@ void fecha (int a, int b, int c, int n)
 void main()
 {int a,b,c,n;
 
-	cout<<"Ingrese El ANIO : ";
+	cout<<"Ingrese LOS DIAS : ";
 	cin>>a;
 	cout<<"Ingrese El MES : ";
 	cin>>b;
-	cout<<"Ingrese LOS DIAS : ";
+	cout<<"Ingrese EL ANIO : ";
 	cin>>c;
 	cout<<"Ingrese LOS DIAS A SUMAR: ";
 	cin>>n;
+
 	fecha(a,b,c,n);
+
 	getch();
 
 }
