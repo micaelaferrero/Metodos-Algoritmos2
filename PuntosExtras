@@ -1,0 +1,85 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+class Combinatorio
+{
+private:
+	int n;
+	int r;
+
+	int fac(int n)
+	{
+		if(n==0)
+		{ 
+			return 1;
+		}
+		else
+		{
+			int f=fac(n-1);
+			return f*n;
+			
+		}
+	}
+
+public:
+	Combinatorio()
+	{ n=0;
+	  r=0;
+	}
+	void setn(int a)
+	{n=a;}
+	void setr(int b)
+	{r=b;}
+	int getn()
+	{return n;}
+	int getr()
+	{return r;}
+
+	void leer()
+	{
+		cout<<"Ingrese n";
+		cin>>n;
+		cout<<"Ingrese r";
+		cin>>r;
+	}
+	void mostrar()
+	{
+		cout<<" n es :";
+		cout<<n;
+		cout<<" r es :";
+		cout<<r;
+	}
+	double sumacombi(Combinatorio c2, Combinatorio c3)
+	{
+		int n1,n2,n3,r1,r2,r3,d1,d2,d3; double c;
+		n1=getn();
+		r1=getr();
+		n2=c2.getn();
+		r2=c2.getr();
+		n3=c3.getn();
+		r3=c3.getr();
+		d1=n1-r1;
+		d2=n2-r2;
+		d3=n3-r3;
+
+		c= fac(n1)/(fac(r1)*fac(d1))+fac(n2)/(fac(r2)*fac(d2))+fac(n3)/(fac(r3)*fac(d3));
+
+		return c;
+		
+	}
+};
+
+
+void main()
+{ double s;
+	Combinatorio c1,c2,c3;
+	c1.leer();
+	c2.leer();
+	c3.leer();
+	s= c1.sumacombi(c2,c3);
+	cout<<"LA SUMA ES:";
+	cout<<s;
+	getch();
+}
